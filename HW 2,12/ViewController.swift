@@ -10,32 +10,24 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    // Label
     @IBOutlet var redLabel: UILabel!
     @IBOutlet var greenLabel: UILabel!
     @IBOutlet var blueLabel: UILabel!
-    
-    
-    
-    //Slider
+   
     @IBOutlet var redSlider: UISlider!
     @IBOutlet var greenSlider: UISlider!
     @IBOutlet var blueSlider: UISlider!
     
-    //TextField
     @IBOutlet var redTextField: UITextField!
     @IBOutlet var greenTextField: UITextField!
     @IBOutlet var blueTextField: UITextField!
     
-    //View
     @IBOutlet var mainView: UIView!
     
     
     let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
    let done = UIBarButtonItem(title: "Done", style: .done, target: nil, action: #selector(resetTapped))
-   
-    
-   
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -52,27 +44,39 @@ class ViewController: UIViewController {
     @IBAction func redSliderAction() {
         redLabel.text = String(format: "%.2f", redSlider.value)
         redTextField.text = String(format: "%.2f",redSlider.value)
-        mainView.backgroundColor = UIColor(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: 1)
+        mainView.backgroundColor = UIColor(
+            red: CGFloat(redSlider.value),
+            green: CGFloat(greenSlider.value),
+            blue: CGFloat(blueSlider.value),
+            alpha: 1
+        )
        
     }
     
     @IBAction func greenSliderAction() {
         greenLabel.text = String(format: "%.2f" , greenSlider.value)
         greenTextField.text = String(format: "%.2f",greenSlider.value)
-        mainView.backgroundColor = UIColor(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: 1)
-       
-        
+        mainView.backgroundColor = UIColor(
+            red: CGFloat(redSlider.value),
+            green: CGFloat(greenSlider.value),
+            blue: CGFloat(blueSlider.value),
+            alpha: 1
+        )
+     
     }
     
     @IBAction func blueSliderAction() {
         blueLabel.text = String(format: "%.2f",blueSlider.value)
         blueTextField.text = String(format: "%.2f",blueSlider.value)
-        mainView.backgroundColor = UIColor(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: 1)
+        mainView.backgroundColor = UIColor(
+            red: CGFloat(redSlider.value),
+            green: CGFloat(greenSlider.value),
+            blue: CGFloat(blueSlider.value),
+            alpha: 1
+        )
         
     }
-    
-   
-    
+
     @objc func resetTapped(){
         
         let redVal = (redTextField.text! as NSString).floatValue
